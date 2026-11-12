@@ -1,0 +1,154 @@
+{
+  "$defs": {
+    "ApprovalRequirement": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "approver": {
+          "$ref": "#/$defs/Role"
+        }
+      },
+      "required": [
+        "action",
+        "approver"
+      ],
+      "title": "ApprovalRequirement",
+      "type": "object"
+    },
+    "LeverStatus": {
+      "enum": [
+        "HYPOTHESIS",
+        "REQUESTED",
+        "ACCEPTED",
+        "COUNTERED",
+        "REJECTED",
+        "EXPIRED",
+        "APPROVED",
+        "APPLIED"
+      ],
+      "title": "LeverStatus",
+      "type": "string"
+    },
+    "LeverType": {
+      "description": "조합 가능한 7개 프리미티브. 새 거래도 코드 변경 없이 이 중 하나로 표현한다.",
+      "enum": [
+        "capacity_delta",
+        "time_shift",
+        "price_adjust",
+        "scope_change",
+        "material_supply",
+        "clause_amendment",
+        "demand_signal"
+      ],
+      "title": "LeverType",
+      "type": "string"
+    },
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "lever_id": {
+      "pattern": "^LV-\\d{3,}$",
+      "title": "Lever Id",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/LeverType"
+    },
+    "params": {
+      "additionalProperties": true,
+      "title": "Params",
+      "type": "object"
+    },
+    "status": {
+      "$ref": "#/$defs/LeverStatus",
+      "default": "HYPOTHESIS"
+    },
+    "owner_role": {
+      "$ref": "#/$defs/Role"
+    },
+    "counterparty": {
+      "title": "Counterparty",
+      "type": "string"
+    },
+    "answer_by": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Answer By"
+    },
+    "valid_until": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid Until"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "provenance": {
+      "enum": [
+        "ASSUMPTION",
+        "HUMAN_INPUT",
+        "SIMULATED",
+        "DERIVED"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "approvals_required": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ApprovalRequirement"
+      },
+      "title": "Approvals Required",
+      "type": "array"
+    }
+  },
+  "required": [
+    "lever_id",
+    "type",
+    "params",
+    "owner_role",
+    "counterparty",
+    "confidence",
+    "provenance"
+  ],
+  "title": "Lever",
+  "type": "object"
+}

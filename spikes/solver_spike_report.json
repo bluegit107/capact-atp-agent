@@ -1,0 +1,413 @@
+[
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.452,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 9110289303,
+    "accept": {
+      "PL-01": 0.812,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.446,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 17749990436,
+    "accept": {
+      "PL-01": 0.889,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.443,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 21563805376,
+    "accept": {
+      "PL-01": 0.826,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 9.333,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 4972122116,
+    "accept": {
+      "PL-01": 0.601,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 1.672,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 15426277592,
+    "accept": {
+      "PL-01": 0.651,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 8.124,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 16817552962,
+    "accept": {
+      "PL-01": 0.609,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.251,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 9110289303,
+    "accept": {
+      "PL-01": 0.812,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.246,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 17749990436,
+    "accept": {
+      "PL-01": 0.889,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.237,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 21563805376,
+    "accept": {
+      "PL-01": 0.826,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 3.873,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 4972122116,
+    "accept": {
+      "PL-01": 0.601,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 4.054,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 15426322562,
+    "accept": {
+      "PL-01": 0.651,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 5.784,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 16819137793,
+    "accept": {
+      "PL-01": 0.609,
+      "PL-02": 1.0
+    },
+    "opt02": 0,
+    "opt01": 0,
+    "capacity_mode": "H1_nameplate_per_month",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.491,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 4953324890,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.466,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 21134693668,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "OPTIMAL",
+    "wall_s": 0.454,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 23050896164,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "99",
+    "wall_s": 20.352,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "99",
+    "wall_s": 20.503,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "HIGHS",
+    "status": "99",
+    "wall_s": 20.345,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.262,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 4953324890,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.253,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 21134693668,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "OPTIMAL",
+    "wall_s": 0.227,
+    "vars": 8636,
+    "constraints": 7724,
+    "integer_batches": false,
+    "objective_krw": 23050896164,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "FEASIBLE",
+    "wall_s": 19.402,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": -590259144,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "A_protect_customers",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "FEASIBLE",
+    "wall_s": 19.91,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 20173529500,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "B_max_profit",
+    "groups": 71
+  },
+  {
+    "backend": "SCIP",
+    "status": "FEASIBLE",
+    "wall_s": 19.909,
+    "vars": 8948,
+    "constraints": 8036,
+    "integer_batches": true,
+    "objective_krw": 21379381895,
+    "accept": {
+      "PL-01": 1.0,
+      "PL-02": 1.0
+    },
+    "opt02": 1,
+    "opt01": 0,
+    "capacity_mode": "H3_calibrated_from_batchlog",
+    "preset": "C_all_in_capacity",
+    "groups": 71
+  }
+]

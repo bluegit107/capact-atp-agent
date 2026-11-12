@@ -1,0 +1,21 @@
+[project]
+name = "dealcockpit"
+version = "0.1.0"
+description = "Deal Cockpit — 대형 수주 vs 기존 고객 약속 의사결정 조종석"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic==2.14.3",
+  "ortools==9.15.6755",
+  "fastapi==0.162.2",
+  "uvicorn[standard]==0.54.0",
+  "psycopg[binary]==3.3.8",
+  "cryptography==50.0.2",
+  "anthropic==2.7.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "highspy==1.15.1", "httpx==0.28.1"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

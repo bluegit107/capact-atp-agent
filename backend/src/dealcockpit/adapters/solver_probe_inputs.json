@@ -1,0 +1,878 @@
+{
+ "H1_nameplate_per_month": {
+  "cap_week": {
+   "PL-01": 310416.5705054235,
+   "PL-02": 449914.60881606274,
+   "PL-03": 424832.9102238634,
+   "PL-04": 338152.0886222017,
+   "PL-05": 339531.73321024695,
+   "PL-06": 403824.37110546965
+  },
+  "groups": [
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-01",
+    "weekly_demand": 69273.07692307692,
+    "unit_price": 8975.758992837711
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-02",
+    "weekly_demand": 28431.153846153848,
+    "unit_price": 15961.659842264038
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-03",
+    "weekly_demand": 28132.0,
+    "unit_price": 10966.589451924445
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-04",
+    "weekly_demand": 26745.23076923077,
+    "unit_price": 13006.948252456225
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-05",
+    "weekly_demand": 53307.92307692308,
+    "unit_price": 6988.388548101523
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-06",
+    "weekly_demand": 24035.46153846154,
+    "unit_price": 8039.711087143675
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-01",
+    "weekly_demand": 72920.61538461539,
+    "unit_price": 9839.875732092223
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-02",
+    "weekly_demand": 34475.230769230766,
+    "unit_price": 17552.50701060739
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-03",
+    "weekly_demand": 28389.923076923078,
+    "unit_price": 12039.944606564084
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-04",
+    "weekly_demand": 30415.615384615383,
+    "unit_price": 14204.667230648225
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-05",
+    "weekly_demand": 38848.07692307692,
+    "unit_price": 7656.082106826395
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-06",
+    "weekly_demand": 27663.23076923077,
+    "unit_price": 8769.11857172253
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-01",
+    "weekly_demand": 21851.153846153848,
+    "unit_price": 9903.661352155317
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-02",
+    "weekly_demand": 11506.76923076923,
+    "unit_price": 17486.57072759847
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-03",
+    "weekly_demand": 10608.76923076923,
+    "unit_price": 12167.582906738982
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-04",
+    "weekly_demand": 7396.076923076923,
+    "unit_price": 14271.314501450874
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-05",
+    "weekly_demand": 16296.23076923077,
+    "unit_price": 7652.0661125035995
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-06",
+    "weekly_demand": 14299.692307692309,
+    "unit_price": 8739.581007660197
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-01",
+    "weekly_demand": 21157.76923076923,
+    "unit_price": 8989.537613024493
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-02",
+    "weekly_demand": 7007.538461538462,
+    "unit_price": 16122.611187951437
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-03",
+    "weekly_demand": 6165.384615384615,
+    "unit_price": 10983.432938240798
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-04",
+    "weekly_demand": 5944.7692307692305,
+    "unit_price": 13025.414067958904
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-05",
+    "weekly_demand": 6090.384615384615,
+    "unit_price": 7013.382355541522
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-06",
+    "weekly_demand": 10391.076923076924,
+    "unit_price": 7977.430154570489
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-01",
+    "weekly_demand": 17030.69230769231,
+    "unit_price": 9878.098929986134
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-02",
+    "weekly_demand": 7198.846153846154,
+    "unit_price": 17556.19982903243
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-03",
+    "weekly_demand": 4344.7692307692305,
+    "unit_price": 12028.650384193194
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-04",
+    "weekly_demand": 4578.2307692307695,
+    "unit_price": 14351.30700472134
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-05",
+    "weekly_demand": 6797.153846153846,
+    "unit_price": 7699.337573418738
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-06",
+    "weekly_demand": 7125.076923076923,
+    "unit_price": 8758.89093774966
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-01",
+    "weekly_demand": 23583.46153846154,
+    "unit_price": 8998.87633772037
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-02",
+    "weekly_demand": 728.0,
+    "unit_price": 15845.299239222317
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-04",
+    "weekly_demand": 6451.2307692307695,
+    "unit_price": 12907.284274914746
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-05",
+    "weekly_demand": 8424.461538461539,
+    "unit_price": 6948.192178454683
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-06",
+    "weekly_demand": 7620.692307692308,
+    "unit_price": 7998.495129657108
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-01",
+    "weekly_demand": 13230.23076923077,
+    "unit_price": 9054.590919397882
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-02",
+    "weekly_demand": 516.0769230769231,
+    "unit_price": 16218.620956923536
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-03",
+    "weekly_demand": 508.61538461538464,
+    "unit_price": 11301.0
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-04",
+    "weekly_demand": 6748.307692307692,
+    "unit_price": 12991.114820809777
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-05",
+    "weekly_demand": 2384.6153846153848,
+    "unit_price": 7029.896161290322
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-06",
+    "weekly_demand": 5136.2307692307695,
+    "unit_price": 7996.2929714996035
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-01",
+    "weekly_demand": 15244.692307692309,
+    "unit_price": 9818.515664972929
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-02",
+    "weekly_demand": 4953.384615384615,
+    "unit_price": 17578.67369630711
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-03",
+    "weekly_demand": 4003.6153846153848,
+    "unit_price": 11943.041866005726
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-04",
+    "weekly_demand": 3964.6153846153848,
+    "unit_price": 14306.574350019402
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-05",
+    "weekly_demand": 10083.692307692309,
+    "unit_price": 7643.887747162212
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-06",
+    "weekly_demand": 2605.6153846153848,
+    "unit_price": 8655.969178992118
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-01",
+    "weekly_demand": 8441.76923076923,
+    "unit_price": 8908.527168019828
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-02",
+    "weekly_demand": 5507.692307692308,
+    "unit_price": 15975.840223463687
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-03",
+    "weekly_demand": 3045.3076923076924,
+    "unit_price": 11034.980726969612
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-04",
+    "weekly_demand": 2346.5384615384614,
+    "unit_price": 13025.385149975415
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-05",
+    "weekly_demand": 2728.230769230769,
+    "unit_price": 6937.150872642174
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-06",
+    "weekly_demand": 4264.307692307692,
+    "unit_price": 7998.697452918681
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-01",
+    "weekly_demand": 11313.846153846154,
+    "unit_price": 9865.650197171608
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-02",
+    "weekly_demand": 3702.6153846153848,
+    "unit_price": 17594.981572277393
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-03",
+    "weekly_demand": 2705.3076923076924,
+    "unit_price": 12021.558872870994
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-04",
+    "weekly_demand": 2733.769230769231,
+    "unit_price": 14109.930498888545
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-05",
+    "weekly_demand": 2848.846153846154,
+    "unit_price": 7701.953476441205
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-06",
+    "weekly_demand": 3771.769230769231,
+    "unit_price": 8854.641465951501
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-01",
+    "weekly_demand": 6202.923076923077,
+    "unit_price": 8936.498301049132
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-02",
+    "weekly_demand": 3368.6923076923076,
+    "unit_price": 15912.441189231156
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-03",
+    "weekly_demand": 2545.5384615384614,
+    "unit_price": 10980.363380877554
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-04",
+    "weekly_demand": 659.3846153846154,
+    "unit_price": 13302.733667755483
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-05",
+    "weekly_demand": 1842.4615384615386,
+    "unit_price": 7042.178857715431
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-06",
+    "weekly_demand": 1316.076923076923,
+    "unit_price": 8090.066397802326
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-01",
+    "weekly_demand": 496.0769230769231,
+    "unit_price": 9078.0
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-02",
+    "weekly_demand": 682.7692307692307,
+    "unit_price": 16228.579990986931
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-03",
+    "weekly_demand": 671.3846153846154,
+    "unit_price": 10729.0
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-04",
+    "weekly_demand": 1562.0,
+    "unit_price": 12906.24564168226
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-05",
+    "weekly_demand": 1960.1538461538462,
+    "unit_price": 6959.073228161054
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-06",
+    "weekly_demand": 810.8461538461538,
+    "unit_price": 8074.0
+   }
+  ]
+ },
+ "H3_calibrated_from_batchlog": {
+  "cap_week": {
+   "PL-01": 350388.0388989198,
+   "PL-02": 113962.57285453362,
+   "PL-03": 131150.95391953227,
+   "PL-04": 130157.22363258712,
+   "PL-05": 219903.1207528784,
+   "PL-06": 149045.5086981743
+  },
+  "groups": [
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-01",
+    "weekly_demand": 69273.07692307692,
+    "unit_price": 8975.758992837711
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-02",
+    "weekly_demand": 28431.153846153848,
+    "unit_price": 15961.659842264038
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-03",
+    "weekly_demand": 28132.0,
+    "unit_price": 10966.589451924445
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-04",
+    "weekly_demand": 26745.23076923077,
+    "unit_price": 13006.948252456225
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-05",
+    "weekly_demand": 53307.92307692308,
+    "unit_price": 6988.388548101523
+   },
+   {
+    "customer_id": "C-101",
+    "product_id": "PL-06",
+    "weekly_demand": 24035.46153846154,
+    "unit_price": 8039.711087143675
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-01",
+    "weekly_demand": 72920.61538461539,
+    "unit_price": 9839.875732092223
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-02",
+    "weekly_demand": 34475.230769230766,
+    "unit_price": 17552.50701060739
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-03",
+    "weekly_demand": 28389.923076923078,
+    "unit_price": 12039.944606564084
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-04",
+    "weekly_demand": 30415.615384615383,
+    "unit_price": 14204.667230648225
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-05",
+    "weekly_demand": 38848.07692307692,
+    "unit_price": 7656.082106826395
+   },
+   {
+    "customer_id": "C-102",
+    "product_id": "PL-06",
+    "weekly_demand": 27663.23076923077,
+    "unit_price": 8769.11857172253
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-01",
+    "weekly_demand": 21851.153846153848,
+    "unit_price": 9903.661352155317
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-02",
+    "weekly_demand": 11506.76923076923,
+    "unit_price": 17486.57072759847
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-03",
+    "weekly_demand": 10608.76923076923,
+    "unit_price": 12167.582906738982
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-04",
+    "weekly_demand": 7396.076923076923,
+    "unit_price": 14271.314501450874
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-05",
+    "weekly_demand": 16296.23076923077,
+    "unit_price": 7652.0661125035995
+   },
+   {
+    "customer_id": "C-103",
+    "product_id": "PL-06",
+    "weekly_demand": 14299.692307692309,
+    "unit_price": 8739.581007660197
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-01",
+    "weekly_demand": 21157.76923076923,
+    "unit_price": 8989.537613024493
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-02",
+    "weekly_demand": 7007.538461538462,
+    "unit_price": 16122.611187951437
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-03",
+    "weekly_demand": 6165.384615384615,
+    "unit_price": 10983.432938240798
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-04",
+    "weekly_demand": 5944.7692307692305,
+    "unit_price": 13025.414067958904
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-05",
+    "weekly_demand": 6090.384615384615,
+    "unit_price": 7013.382355541522
+   },
+   {
+    "customer_id": "C-104",
+    "product_id": "PL-06",
+    "weekly_demand": 10391.076923076924,
+    "unit_price": 7977.430154570489
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-01",
+    "weekly_demand": 17030.69230769231,
+    "unit_price": 9878.098929986134
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-02",
+    "weekly_demand": 7198.846153846154,
+    "unit_price": 17556.19982903243
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-03",
+    "weekly_demand": 4344.7692307692305,
+    "unit_price": 12028.650384193194
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-04",
+    "weekly_demand": 4578.2307692307695,
+    "unit_price": 14351.30700472134
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-05",
+    "weekly_demand": 6797.153846153846,
+    "unit_price": 7699.337573418738
+   },
+   {
+    "customer_id": "C-105",
+    "product_id": "PL-06",
+    "weekly_demand": 7125.076923076923,
+    "unit_price": 8758.89093774966
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-01",
+    "weekly_demand": 23583.46153846154,
+    "unit_price": 8998.87633772037
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-02",
+    "weekly_demand": 728.0,
+    "unit_price": 15845.299239222317
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-04",
+    "weekly_demand": 6451.2307692307695,
+    "unit_price": 12907.284274914746
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-05",
+    "weekly_demand": 8424.461538461539,
+    "unit_price": 6948.192178454683
+   },
+   {
+    "customer_id": "C-106",
+    "product_id": "PL-06",
+    "weekly_demand": 7620.692307692308,
+    "unit_price": 7998.495129657108
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-01",
+    "weekly_demand": 13230.23076923077,
+    "unit_price": 9054.590919397882
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-02",
+    "weekly_demand": 516.0769230769231,
+    "unit_price": 16218.620956923536
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-03",
+    "weekly_demand": 508.61538461538464,
+    "unit_price": 11301.0
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-04",
+    "weekly_demand": 6748.307692307692,
+    "unit_price": 12991.114820809777
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-05",
+    "weekly_demand": 2384.6153846153848,
+    "unit_price": 7029.896161290322
+   },
+   {
+    "customer_id": "C-107",
+    "product_id": "PL-06",
+    "weekly_demand": 5136.2307692307695,
+    "unit_price": 7996.2929714996035
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-01",
+    "weekly_demand": 15244.692307692309,
+    "unit_price": 9818.515664972929
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-02",
+    "weekly_demand": 4953.384615384615,
+    "unit_price": 17578.67369630711
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-03",
+    "weekly_demand": 4003.6153846153848,
+    "unit_price": 11943.041866005726
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-04",
+    "weekly_demand": 3964.6153846153848,
+    "unit_price": 14306.574350019402
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-05",
+    "weekly_demand": 10083.692307692309,
+    "unit_price": 7643.887747162212
+   },
+   {
+    "customer_id": "C-108",
+    "product_id": "PL-06",
+    "weekly_demand": 2605.6153846153848,
+    "unit_price": 8655.969178992118
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-01",
+    "weekly_demand": 8441.76923076923,
+    "unit_price": 8908.527168019828
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-02",
+    "weekly_demand": 5507.692307692308,
+    "unit_price": 15975.840223463687
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-03",
+    "weekly_demand": 3045.3076923076924,
+    "unit_price": 11034.980726969612
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-04",
+    "weekly_demand": 2346.5384615384614,
+    "unit_price": 13025.385149975415
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-05",
+    "weekly_demand": 2728.230769230769,
+    "unit_price": 6937.150872642174
+   },
+   {
+    "customer_id": "C-109",
+    "product_id": "PL-06",
+    "weekly_demand": 4264.307692307692,
+    "unit_price": 7998.697452918681
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-01",
+    "weekly_demand": 11313.846153846154,
+    "unit_price": 9865.650197171608
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-02",
+    "weekly_demand": 3702.6153846153848,
+    "unit_price": 17594.981572277393
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-03",
+    "weekly_demand": 2705.3076923076924,
+    "unit_price": 12021.558872870994
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-04",
+    "weekly_demand": 2733.769230769231,
+    "unit_price": 14109.930498888545
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-05",
+    "weekly_demand": 2848.846153846154,
+    "unit_price": 7701.953476441205
+   },
+   {
+    "customer_id": "C-110",
+    "product_id": "PL-06",
+    "weekly_demand": 3771.769230769231,
+    "unit_price": 8854.641465951501
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-01",
+    "weekly_demand": 6202.923076923077,
+    "unit_price": 8936.498301049132
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-02",
+    "weekly_demand": 3368.6923076923076,
+    "unit_price": 15912.441189231156
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-03",
+    "weekly_demand": 2545.5384615384614,
+    "unit_price": 10980.363380877554
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-04",
+    "weekly_demand": 659.3846153846154,
+    "unit_price": 13302.733667755483
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-05",
+    "weekly_demand": 1842.4615384615386,
+    "unit_price": 7042.178857715431
+   },
+   {
+    "customer_id": "C-111",
+    "product_id": "PL-06",
+    "weekly_demand": 1316.076923076923,
+    "unit_price": 8090.066397802326
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-01",
+    "weekly_demand": 496.0769230769231,
+    "unit_price": 9078.0
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-02",
+    "weekly_demand": 682.7692307692307,
+    "unit_price": 16228.579990986931
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-03",
+    "weekly_demand": 671.3846153846154,
+    "unit_price": 10729.0
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-04",
+    "weekly_demand": 1562.0,
+    "unit_price": 12906.24564168226
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-05",
+    "weekly_demand": 1960.1538461538462,
+    "unit_price": 6959.073228161054
+   },
+   {
+    "customer_id": "C-112",
+    "product_id": "PL-06",
+    "weekly_demand": 810.8461538461538,
+    "unit_price": 8074.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,138 @@
+{
+  "doc_id": "CT-C101",
+  "customer_id": "C-101",
+  "provenance": "SYNTHETIC",
+  "clauses": [
+    {
+      "clause_id": "CL-C101-07",
+      "customer_id": "C-101",
+      "kind": "partial_shipment",
+      "params": {
+        "allowed": true,
+        "min_first_shipment_pct": 40
+      },
+      "hard": false,
+      "priority": 1,
+      "supersedes": [],
+      "evidence": {
+        "doc_id": "CT-C101",
+        "page": 5,
+        "clause": "제7조",
+        "char_span": [
+          534,
+          615
+        ],
+        "quote": "을은 갑의 사전 서면 동의 없이도 개별 주문을 2회 이내로 분할하여 납품할 수 있다. 다만 최초 납품분은 주문 수량의 40퍼센트 이상이어야 한다."
+      },
+      "extraction": {
+        "model": "gold-label",
+        "confidence": 1.0,
+        "human_confirmed": true,
+        "confirmed_by": "labeler"
+      },
+      "provenance": "SYNTHETIC"
+    },
+    {
+      "clause_id": "CL-C101-09",
+      "customer_id": "C-101",
+      "kind": "late_penalty",
+      "params": {
+        "rate_per_day_pct": 0.1,
+        "cap_pct_of_order": 10
+      },
+      "hard": false,
+      "priority": 1,
+      "supersedes": [],
+      "evidence": {
+        "doc_id": "CT-C101",
+        "page": 7,
+        "clause": "제9조",
+        "char_span": [
+          658,
+          756
+        ],
+        "quote": "지체일수 1일마다 해당 주문 금액의 1,000분의 1(0.1퍼센트)에 해당하는 지체상금을 갑에게 지급한다. ② 지체상금의 총액은 해당 주문 금액의 10퍼센트를 초과하지 못한다."
+      },
+      "extraction": {
+        "model": "gold-label",
+        "confidence": 1.0,
+        "human_confirmed": true,
+        "confirmed_by": "labeler"
+      },
+      "provenance": "SYNTHETIC"
+    },
+    {
+      "clause_id": "CL-C101-10",
+      "customer_id": "C-101",
+      "kind": "price_discount_waiver",
+      "params": {
+        "discount_pct": 3.0,
+        "extends_grace_days": 14,
+        "waives_penalty": true
+      },
+      "hard": false,
+      "priority": 1,
+      "supersedes": [],
+      "evidence": {
+        "doc_id": "CT-C101",
+        "page": 8,
+        "clause": "제10조",
+        "char_span": [
+          798,
+          878
+        ],
+        "quote": "해당 주문 단가의 3퍼센트를 인하하여 제공하는 경우, 갑은 14일의 범위에서 납기 연장을 승인하며 해당 기간 동안 제9조의 지체상금은 면제된다."
+      },
+      "extraction": {
+        "model": "gold-label",
+        "confidence": 1.0,
+        "human_confirmed": true,
+        "confirmed_by": "labeler"
+      },
+      "provenance": "SYNTHETIC"
+    },
+    {
+      "clause_id": "CL-C101-12",
+      "customer_id": "C-101",
+      "kind": "termination_trigger",
+      "params": {
+        "delay_days_gt": 30,
+        "scope": "any_single_order"
+      },
+      "hard": true,
+      "priority": 1,
+      "supersedes": [],
+      "evidence": {
+        "doc_id": "CT-C101",
+        "page": 9,
+        "clause": "제12조",
+        "char_span": [
+          907,
+          969
+        ],
+        "quote": "개별 주문 하나라도 납기일로부터 30일을 초과하여 지연된 경우 갑은 최고 없이 본 계약 전부를 해지할 수 있다."
+      },
+      "extraction": {
+        "model": "gold-label",
+        "confidence": 1.0,
+        "human_confirmed": true,
+        "confirmed_by": "labeler"
+      },
+      "provenance": "SYNTHETIC"
+    }
+  ],
+  "unmapped": [
+    {
+      "clause": "제14조",
+      "reason": "솔버 제약과 무관(비밀유지)",
+      "quote": "양 당사자는 본 계약과 관련하여 알게 된 상대방의 영업상 비밀을 제3자에게 누설하지 아니한다.",
+      "page": 11,
+      "char_span": [
+        997,
+        1049
+      ]
+    }
+  ],
+  "conflicts": [],
+  "flags": []
+}

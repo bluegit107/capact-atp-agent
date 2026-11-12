@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인</title>
+<link rel="preload" href="/static/fonts/PretendardVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/styles.css">
+<script src="/static/app.js" defer></script>
+<script src="/static/w05.js" defer></script>
+</head>
+<body>
+<div id="login" class="login hidden">
+  <form id="login-form" class="login-card" autocomplete="on">
+    <h1>로그인</h1>
+    <label>아이디<input id="login-user" name="username" required maxlength="64" autocomplete="username"></label>
+    <label>비밀번호<input id="login-pass" name="password" type="password" required maxlength="256" autocomplete="current-password"></label>
+    <button type="submit" class="primary wide">로그인</button>
+    <p id="login-error" class="error" role="alert"></p>
+  </form>
+</div>
+
+<div id="app" class="shell hidden">
+  <nav class="nav" aria-label="메뉴">
+    <div class="nav-head" aria-hidden="true">C</div>
+    <div id="nav-main" class="nav-group"></div>
+    <div id="nav-test" class="nav-group nav-test"></div>
+    <div class="nav-foot">
+      <div id="who" class="who"></div>
+      <button id="logout" class="icon-btn" aria-label="로그아웃" title="로그아웃"></button>
+    </div>
+  </nav>
+  <div class="content">
+    <header class="topbar">
+      <h1 id="page-title"></h1>
+      <div id="chips" class="chips"></div>
+    </header>
+    <main id="main" class="main" tabindex="-1"></main>
+  </div>
+  <aside id="drawer" class="drawer hidden" aria-label="근거"></aside>
+  <div id="toast" class="toast hidden" role="status"></div>
+  <div id="tip" class="tip hidden" role="tooltip"></div>
+</div>
+</body>
+</html>

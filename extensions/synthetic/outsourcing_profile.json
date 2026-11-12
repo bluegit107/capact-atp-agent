@@ -1,0 +1,41 @@
+{
+  "_meta": {
+    "id": "SYN-OUT-001",
+    "provenance": "SYNTHETIC",
+    "note": "원본에 외주사·외주 단가·특근 규정이 없어 가정으로 보완. 수치는 업계 상식 범위의 보수적 가정이며 현업 검증 전이다. 결과는 '이 가정 아래의 결과'로만 표기한다.",
+    "applies_at": "2026-07-01"
+  },
+  "premium": {
+    "overtime_multiplier": 1.5,
+    "overtime_max_hours_per_week": 16,
+    "provenance": "ASSUMPTION",
+    "partners": [
+      {
+        "partner_id": "V-OUT-1",
+        "product_id": "PL-02",
+        "max_qty_per_month": 50000,
+        "lead_time_weeks": 4,
+        "unit_cost_multiplier": 1.35,
+        "min_term_months": 3,
+        "quality_risk_note": "더마 처방(특허 활성성분 M-B) 전달·외부 충전 시 품질 심사 필요. 리콜 책임은 Corevia에 남는다(C-201 리콜 전가 조항).",
+        "provenance": "SYNTHETIC"
+      },
+      {
+        "partner_id": "V-OUT-2",
+        "product_id": "PL-01",
+        "max_qty_per_month": 80000,
+        "lead_time_weeks": 3,
+        "unit_cost_multiplier": 1.25,
+        "min_term_months": 3,
+        "quality_risk_note": "기초 제품군, 처방 민감도 낮음.",
+        "provenance": "SYNTHETIC"
+      }
+    ]
+  },
+  "changeover_hours": {
+    "PL-03>PL-02": 12.0,
+    "PL-05>PL-02": 12.0,
+    "PL-06>PL-02": 10.0
+  },
+  "changeover_note": "F2 전환(OPT-02)에서 기존 제품군에서 더마로 바뀔 때의 전환 손실(시간). 순서 의존 전환을 제품군 단위로 단순화(E4)."
+}

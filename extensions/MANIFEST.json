@@ -1,0 +1,261 @@
+{
+  "_doc": "원본 외 모든 추가 자료의 식별자·성격·원본 연결·생성 이유·적용 시점·사용 위치 (A05 §6). 원본 폴더는 수정하지 않으며 raw_checksums.json 으로 보존을 검증한다. 합성은 최소화한다.",
+  "version": "2026-11-10.2",
+  "items": [
+    {
+      "id": "SYN-CT-C101",
+      "path": "contracts/CT-C101.md",
+      "kind": "contract_text",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "01_corevia/master/m_customer_cv.csv#C-101",
+        "01_corevia/sales/sales_meeting_notes_cv.md"
+      ],
+      "reason": "원본에 고객 계약서 원문이 없다. 분할납품·지체상금·할인 면책·해지 조항을 계약 문구→제약 변환 시연의 근거로 합성. 납기 60일은 원본 리드타임 분포(45~77일, 중앙 60일)와 정렬.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S2 solver constraints",
+        "S5 evidence highlighting",
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-CT-C102",
+      "path": "contracts/CT-C102.md",
+      "kind": "contract_text",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "01_corevia/master/m_customer_cv.csv#C-102",
+        "01_corevia/sales/sales_orders_cv.csv (C-102 PL-02 백로그 293,142 EA)"
+      ],
+      "reason": "홈쇼핑 고객의 편성일 고정 납기·방송 취소 보상금과 본문-특약 상충(특약 우선)을 시연. 편성 상품은 더마 120,000 EA로 설정해 L-02 병목과 충돌시킨다(가정).",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S2 solver constraints",
+        "conflict card",
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-CT-ADV01",
+      "path": "contracts/adversarial/CT-ADV-01.md",
+      "kind": "contract_text_eval",
+      "provenance": "SYNTHETIC",
+      "anchors": [],
+      "reason": "추출기 평가 전용 적대 케이스(상충 수치, 누락 파라미터, 모호 문구, 문서 속 지시문 주입). 시연·솔버 입력에 사용하지 않는다.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-LBL-C101",
+      "path": "contracts/labels/CT-C101.labels.json",
+      "kind": "gold_labels",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "SYN-CT-C101"
+      ],
+      "reason": "scripts/build_contract_labels.py 가 인용문 위치·페이지를 계산해 생성. 도메인 Clause 스키마를 만족.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S1 data tests",
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-LBL-C102",
+      "path": "contracts/labels/CT-C102.labels.json",
+      "kind": "gold_labels",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "SYN-CT-C102"
+      ],
+      "reason": "동일. 본문-특약 상충(conflicts)을 포함.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S1 data tests",
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-LBL-ADV01",
+      "path": "contracts/labels/CT-ADV-01.labels.json",
+      "kind": "gold_labels",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "SYN-CT-ADV01"
+      ],
+      "reason": "기대 동작: 유효 조항 0건, 누락 파라미터·상충·모호·주입을 플래그로 보고.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "P5 extraction eval"
+      ]
+    },
+    {
+      "id": "SYN-OUT-001",
+      "path": "synthetic/outsourcing_profile.json",
+      "kind": "assumption_table",
+      "provenance": "SYNTHETIC",
+      "anchors": [
+        "01_corevia/docs/rfp_c201.md",
+        "01_corevia/production/strat_capex_plan_cv.csv"
+      ],
+      "reason": "원본에 외주사·외주 단가·특근 규정·전환시간이 없어 가정으로 보완. 현업 검증 전이며 결과는 가정 하의 결과로만 표기.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S2 solver (overtime, outsourcing, changeover)",
+        "S3 lever valuation"
+      ]
+    },
+    {
+      "id": "SYN-REPLY-001",
+      "path": "synthetic/mock_reply_policy.json",
+      "kind": "simulated_replies",
+      "provenance": "SIMULATED",
+      "anchors": [
+        "01_corevia/production/strat_capex_plan_cv.csv#OPT-02",
+        "00_common/approval_authority_policy.md"
+      ],
+      "reason": "외부 상대방의 모의 회신. 주제마다 수락·거절·불리한 역제안·무응답을 포함해 유리한 회신만 가정하지 않는다. 가상 입력이며 확보한 증거가 아니다.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S4 negotiation loop",
+        "P5 reply-parsing eval"
+      ]
+    },
+    {
+      "id": "DER-AS001",
+      "path": "derived/as001_capacity_unit_evidence.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/production/strat_capacity_cv.csv",
+        "01_corevia/production/prod_batch_log_cv.csv",
+        "01_corevia/sales/sales_orders_cv.csv"
+      ],
+      "reason": "용량 단위 증거 점검(scripts/reconcile_capacity_units.py). 단정하지 않고 확인 요청으로 연결.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S3 assumption gate"
+      ]
+    },
+    {
+      "id": "DER-AS002",
+      "path": "derived/as002_backlog_and_stale_orders.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/sales/sales_orders_cv.csv",
+        "01_corevia/sales/sales_shipments_cv.csv"
+      ],
+      "reason": "수주-출하 대사로 확정 백로그/상태 불명 주문 분리(scripts/derive_backlog.py).",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S2 existing commitments",
+        "S3 assumption gate"
+      ]
+    },
+    {
+      "id": "DER-S2",
+      "path": "derived/s2_pl02_commitments.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/sales/sales_orders_cv.csv",
+        "01_corevia/sales/sales_shipments_cv.csv",
+        "01_corevia/financials/fin_income_statement_cv.csv",
+        "01_corevia/production/strat_capacity_cv.csv",
+        "01_corevia/production/prod_batch_log_cv.csv",
+        "01_corevia/production/production_material_consumption_cv.csv",
+        "01_corevia/procurement/procurement_material_purchase_cv.csv",
+        "01_corevia/master/m_material_cv.csv",
+        "01_corevia/quality/qc_claims_cv.csv"
+      ],
+      "reason": "솔버 입력(PL-02): 백로그 납기(수주일+60일)·신규 수주 예측(최근 13주)·단가·COGS/EA·용량·규모 대응비 분모, RFP 원가 기준 원료 투입 원가(kg/EA·USD/kg, 환율 연동), 12개월 확정 결함률·회수 기준(10%) 해당 배치. scripts/derive_s2_inputs.py 로 재생성. 납기는 수주일+60일 가정(DERIVED), 기지연 수량은 W0 에 합산.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S2 solver input"
+      ]
+    },
+    {
+      "id": "DER-OVERVIEW",
+      "path": "derived/company_overview.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/production/prod_batch_log_cv.csv",
+        "01_corevia/production/strat_capacity_cv.csv",
+        "01_corevia/sales/sales_customer_summary_cv.csv",
+        "01_corevia/master/m_product_cv.csv"
+      ],
+      "reason": "대시보드: 월별 생산(제품별)·라인 용량/가동률·월별 수주/출하 매출(scripts/derive_overview_history.py). 원본 집계만, 가정 없음.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S6 dashboard"
+      ]
+    },
+    {
+      "id": "DER-HISTORY",
+      "path": "derived/customer_history.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/master/m_customer_cv.csv",
+        "01_corevia/master/m_agency_cv.csv",
+        "01_corevia/sales/sales_orders_cv.csv",
+        "01_corevia/sales/sales_shipments_cv.csv",
+        "01_corevia/sales/sales_customer_summary_cv.csv",
+        "01_corevia/sales/sales_rebate_payment_cv.csv",
+        "01_corevia/quality/qc_claims_cv.csv",
+        "01_corevia/financials/fin_ar_aging_cv.csv"
+      ],
+      "reason": "거래처 이력: 고객 12·대리점 50의 거래 조건·월별 수주/출하·주문(최근 30건)·백로그/상태 불명·클레임·미수금·리베이트(scripts/derive_overview_history.py). 백로그 합계는 DER-AS002 와 일치(1,216/598). 대리점 대표자·사업자번호·주소·계좌는 제외.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "S6 customer history"
+      ]
+    },
+    {
+      "id": "DER-W05",
+      "path": "derived/w05_engine_inputs.json",
+      "kind": "derived",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_corevia/sales/sales_orders_cv.csv",
+        "01_corevia/sales/sales_shipments_cv.csv",
+        "01_corevia/production/prod_batch_log_cv.csv",
+        "01_corevia/production/strat_capacity_cv.csv",
+        "01_corevia/production/strat_capex_plan_cv.csv",
+        "01_corevia/production/production_material_consumption_cv.csv",
+        "01_corevia/master/m_material_cv.csv",
+        "01_corevia/quality/qc_claims_cv.csv",
+        "01_corevia/sales/sales_customer_summary_cv.csv",
+        "05_external/fx/ext_fx_daily.csv",
+        "01_corevia/docs/rfp_c201.md",
+        "00_common/approval_authority_policy.md",
+        "03_aurora_group/funding/grp_available_cash.md"
+      ],
+      "reason": "W05 지시서 ATP 엔진 입력(scripts/derive_w05_inputs.py): 미출하 수주·상반기 생산·라인 능력·설비안·재료비·환율·C-101 추세·확정 클레임, 원본 행 번호(_row) 보존, 문서 상수 시드(source_ref 줄 대조 테스트 R17). 기준값 R01~R18 일치.",
+      "applies_at": "2026-07-01",
+      "used_in": [
+        "W05 ATP ledger",
+        "evidence drawer"
+      ]
+    },
+    {
+      "id": "CHK-RAW",
+      "path": "raw_checksums.json",
+      "kind": "integrity",
+      "provenance": "DERIVED",
+      "anchors": [
+        "01_참가자_배포용/04_원본데이터/**"
+      ],
+      "reason": "원본 보존 증명(SHA-256). scripts/snapshot_raw_checksums.py 로 검증.",
+      "applies_at": "2026-11-09",
+      "used_in": [
+        "S1 data tests"
+      ]
+    }
+  ]
+}

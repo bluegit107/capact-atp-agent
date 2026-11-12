@@ -1,0 +1,407 @@
+{
+  "$defs": {
+    "ApprovalNeed": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "approver": {
+          "title": "Approver",
+          "type": "string"
+        }
+      },
+      "required": [
+        "action",
+        "approver"
+      ],
+      "title": "ApprovalNeed",
+      "type": "object"
+    },
+    "CustomerImpact": {
+      "additionalProperties": false,
+      "properties": {
+        "customer_id": {
+          "title": "Customer Id",
+          "type": "string"
+        },
+        "orders_delayed": {
+          "minimum": 0,
+          "title": "Orders Delayed",
+          "type": "integer"
+        },
+        "max_delay_days": {
+          "minimum": 0,
+          "title": "Max Delay Days",
+          "type": "integer"
+        },
+        "penalty_krw": {
+          "minimum": 0,
+          "title": "Penalty Krw",
+          "type": "integer"
+        },
+        "evidence_clause_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Clause Ids",
+          "type": "array"
+        },
+        "termination_risk": {
+          "default": false,
+          "title": "Termination Risk",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "customer_id",
+        "orders_delayed",
+        "max_delay_days",
+        "penalty_krw"
+      ],
+      "title": "CustomerImpact",
+      "type": "object"
+    },
+    "Financials": {
+      "additionalProperties": false,
+      "properties": {
+        "incremental_revenue_krw": {
+          "title": "Incremental Revenue Krw",
+          "type": "integer"
+        },
+        "contribution_krw": {
+          "title": "Contribution Krw",
+          "type": "integer"
+        },
+        "penalty_krw": {
+          "minimum": 0,
+          "title": "Penalty Krw",
+          "type": "integer"
+        },
+        "premium_cost_krw": {
+          "minimum": 0,
+          "title": "Premium Cost Krw",
+          "type": "integer"
+        },
+        "capex_krw": {
+          "minimum": 0,
+          "title": "Capex Krw",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "incremental_revenue_krw",
+        "contribution_krw",
+        "penalty_krw",
+        "premium_cost_krw",
+        "capex_krw"
+      ],
+      "title": "Financials",
+      "type": "object"
+    },
+    "Infeasibility": {
+      "additionalProperties": false,
+      "properties": {
+        "min_relaxation": {
+          "items": {
+            "$ref": "#/$defs/RelaxationItem"
+          },
+          "minItems": 1,
+          "title": "Min Relaxation",
+          "type": "array"
+        },
+        "suggested_lever_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Suggested Lever Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "min_relaxation"
+      ],
+      "title": "Infeasibility",
+      "type": "object"
+    },
+    "RelaxationItem": {
+      "additionalProperties": false,
+      "properties": {
+        "constraint": {
+          "title": "Constraint",
+          "type": "string"
+        },
+        "slack": {
+          "exclusiveMinimum": 0,
+          "title": "Slack",
+          "type": "number"
+        }
+      },
+      "required": [
+        "constraint",
+        "slack"
+      ],
+      "title": "RelaxationItem",
+      "type": "object"
+    },
+    "Scenario": {
+      "additionalProperties": false,
+      "properties": {
+        "scenario_id": {
+          "pattern": "^[A-Z]$",
+          "title": "Scenario Id",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Weights",
+          "type": "object"
+        },
+        "accepted_pct": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Accepted Pct",
+          "type": "object"
+        },
+        "capacity_actions": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Capacity Actions",
+          "type": "array"
+        },
+        "financials": {
+          "$ref": "#/$defs/Financials"
+        },
+        "customer_impact": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/CustomerImpact"
+          },
+          "title": "Customer Impact",
+          "type": "array"
+        },
+        "schedule": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ScheduleEntry"
+          },
+          "title": "Schedule",
+          "type": "array"
+        },
+        "approvals_required": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/ApprovalNeed"
+          },
+          "title": "Approvals Required",
+          "type": "array"
+        },
+        "used_lever_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Used Lever Ids",
+          "type": "array"
+        },
+        "infeasibility": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Infeasibility"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "kpis": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "default": {},
+          "title": "Kpis",
+          "type": "object"
+        }
+      },
+      "required": [
+        "scenario_id",
+        "label",
+        "weights",
+        "accepted_pct",
+        "financials"
+      ],
+      "title": "Scenario",
+      "type": "object"
+    },
+    "ScheduleEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "week": {
+          "pattern": "^\\d{4}-W\\d{2}$",
+          "title": "Week",
+          "type": "string"
+        },
+        "line_id": {
+          "title": "Line Id",
+          "type": "string"
+        },
+        "product_id": {
+          "title": "Product Id",
+          "type": "string"
+        },
+        "customer_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Customer Id"
+        },
+        "qty": {
+          "minimum": 0,
+          "title": "Qty",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "base",
+            "overtime",
+            "outsourced",
+            "option"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "week",
+        "line_id",
+        "product_id",
+        "qty",
+        "kind"
+      ],
+      "title": "ScheduleEntry",
+      "type": "object"
+    },
+    "SolverMeta": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "OPTIMAL",
+            "FEASIBLE",
+            "INFEASIBLE",
+            "UNKNOWN"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "wall_ms": {
+          "minimum": 0,
+          "title": "Wall Ms",
+          "type": "integer"
+        },
+        "mip_gap": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mip Gap"
+        }
+      },
+      "required": [
+        "name",
+        "status",
+        "wall_ms"
+      ],
+      "title": "SolverMeta",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "solution/v1",
+      "default": "solution/v1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "input_hash": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "title": "Input Hash",
+      "type": "string"
+    },
+    "solver": {
+      "$ref": "#/$defs/SolverMeta"
+    },
+    "scenarios": {
+      "items": {
+        "$ref": "#/$defs/Scenario"
+      },
+      "minItems": 1,
+      "title": "Scenarios",
+      "type": "array"
+    },
+    "baseline": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Scenario"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "sensitivity": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "default": {},
+      "title": "Sensitivity",
+      "type": "object"
+    },
+    "trace": {
+      "default": [],
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Trace",
+      "type": "array"
+    }
+  },
+  "required": [
+    "input_hash",
+    "solver",
+    "scenarios"
+  ],
+  "title": "SolverOutput",
+  "type": "object"
+}

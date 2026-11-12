@@ -1,0 +1,42 @@
+{
+  "additionalProperties": false,
+  "description": "AI·자동화·사람 누구나 만들 수 있는 제안. 적용은 사람이 `ParameterRegistry.apply_proposal` 로만.",
+  "properties": {
+    "proposal_id": {
+      "pattern": "^PC-\\d{3,}$",
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "key": {
+      "title": "Key",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "type": "number"
+    },
+    "proposer_kind": {
+      "enum": [
+        "ai",
+        "system",
+        "human"
+      ],
+      "title": "Proposer Kind",
+      "type": "string"
+    },
+    "rationale": {
+      "minLength": 5,
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "key",
+    "value",
+    "proposer_kind",
+    "rationale"
+  ],
+  "title": "ProposedChange",
+  "type": "object"
+}

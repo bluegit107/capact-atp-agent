@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+.env
+.env.*
+# 테스트 계정·시크릿은 저장소에 두지 않는다 (제출 문서에만 기재)
+docs/TEST_ACCOUNTS.md
+*.sqlite3
+
+# axhub import: local agent runtime state
+.axhub/

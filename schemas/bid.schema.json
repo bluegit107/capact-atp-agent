@@ -1,0 +1,339 @@
+{
+  "$defs": {
+    "BidLine": {
+      "additionalProperties": false,
+      "properties": {
+        "product_id": {
+          "title": "Product Id",
+          "type": "string"
+        },
+        "annual_qty": {
+          "exclusiveMinimum": 0,
+          "title": "Annual Qty",
+          "type": "integer"
+        },
+        "unit_price_fx": {
+          "exclusiveMinimum": 0,
+          "title": "Unit Price Fx",
+          "type": "number"
+        },
+        "min_accept_pct": {
+          "default": 0,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Min Accept Pct",
+          "type": "number"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "default": "SOURCE"
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "product_id",
+        "annual_qty",
+        "unit_price_fx"
+      ],
+      "title": "BidLine",
+      "type": "object"
+    },
+    "BidTerms": {
+      "additionalProperties": false,
+      "properties": {
+        "currency": {
+          "const": "USD",
+          "title": "Currency",
+          "type": "string"
+        },
+        "late_penalty_pct_per_month": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Late Penalty Pct Per Month",
+          "type": "number"
+        },
+        "recall_cost_passthrough": {
+          "title": "Recall Cost Passthrough",
+          "type": "boolean"
+        },
+        "partial_award_allowed": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Partial Award Allowed"
+        }
+      },
+      "required": [
+        "currency",
+        "late_penalty_pct_per_month",
+        "recall_cost_passthrough"
+      ],
+      "title": "BidTerms",
+      "type": "object"
+    },
+    "FxScenario": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "usd_krw": {
+          "exclusiveMinimum": 0,
+          "title": "Usd Krw",
+          "type": "number"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      },
+      "required": [
+        "label",
+        "usd_krw",
+        "provenance"
+      ],
+      "title": "FxScenario",
+      "type": "object"
+    },
+    "Provenance": {
+      "description": "정보 성격 구분 (A05 §6: 원본·부서 주장·가정·합성·모의·계산결과를 섞지 않는다).",
+      "enum": [
+        "SOURCE",
+        "DEPT_CLAIM",
+        "ASSUMPTION",
+        "SYNTHETIC",
+        "SIMULATED",
+        "HUMAN_INPUT",
+        "DERIVED"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "description": "원본 행/파일 또는 계약서 원문까지 추적하는 근거 참조.",
+      "properties": {
+        "file": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "clause": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clause"
+        },
+        "char_span": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Char Span"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "SupplyStart": {
+      "additionalProperties": false,
+      "description": "입찰 제출 마감과 공급 개시일은 다른 정보다(A05 §4). 모르면 가정으로 명시하고 가정 ID에 묶는다.",
+      "properties": {
+        "requested": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Requested"
+        },
+        "assumed": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assumed"
+        },
+        "assumption_id": {
+          "anyOf": [
+            {
+              "pattern": "^AS-\\d{3}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Assumption Id"
+        }
+      },
+      "title": "SupplyStart",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "bid_id": {
+      "title": "Bid Id",
+      "type": "string"
+    },
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "deadline": {
+      "format": "date",
+      "title": "Deadline",
+      "type": "string"
+    },
+    "supply_start": {
+      "$ref": "#/$defs/SupplyStart"
+    },
+    "fx": {
+      "items": {
+        "$ref": "#/$defs/FxScenario"
+      },
+      "minItems": 1,
+      "title": "Fx",
+      "type": "array"
+    },
+    "lines": {
+      "items": {
+        "$ref": "#/$defs/BidLine"
+      },
+      "minItems": 1,
+      "title": "Lines",
+      "type": "array"
+    },
+    "terms": {
+      "$ref": "#/$defs/BidTerms"
+    },
+    "price_pressure_pct": {
+      "default": [
+        0.0
+      ],
+      "items": {
+        "type": "number"
+      },
+      "title": "Price Pressure Pct",
+      "type": "array"
+    }
+  },
+  "required": [
+    "bid_id",
+    "as_of",
+    "deadline",
+    "supply_start",
+    "fx",
+    "lines",
+    "terms"
+  ],
+  "title": "Bid",
+  "type": "object"
+}

@@ -1,0 +1,105 @@
+{
+  "$defs": {
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    },
+    "TaskStatus": {
+      "enum": [
+        "OPEN",
+        "WAITING_REPLY",
+        "DONE",
+        "BLOCKED"
+      ],
+      "title": "TaskStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "task_id": {
+      "pattern": "^TK-\\d{3,}$",
+      "title": "Task Id",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "owner_role": {
+      "$ref": "#/$defs/Role"
+    },
+    "status": {
+      "$ref": "#/$defs/TaskStatus",
+      "default": "OPEN"
+    },
+    "due": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Due"
+    },
+    "linked_request_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Linked Request Id"
+    },
+    "linked_approval_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Linked Approval Id"
+    },
+    "blocked_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Blocked Reason"
+    }
+  },
+  "required": [
+    "task_id",
+    "title",
+    "owner_role"
+  ],
+  "title": "Task",
+  "type": "object"
+}

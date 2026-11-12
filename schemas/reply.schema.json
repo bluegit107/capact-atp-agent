@@ -1,0 +1,70 @@
+{
+  "$defs": {
+    "ReplyOutcome": {
+      "enum": [
+        "ACCEPT",
+        "REJECT",
+        "COUNTER",
+        "CONDITIONAL",
+        "NO_REPLY"
+      ],
+      "title": "ReplyOutcome",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "reply_id": {
+      "pattern": "^RP-\\d{3,}$",
+      "title": "Reply Id",
+      "type": "string"
+    },
+    "request_id": {
+      "pattern": "^IR-\\d{3,}$",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "raw_text": {
+      "title": "Raw Text",
+      "type": "string"
+    },
+    "outcome": {
+      "$ref": "#/$defs/ReplyOutcome"
+    },
+    "terms": {
+      "additionalProperties": true,
+      "default": {},
+      "title": "Terms",
+      "type": "object"
+    },
+    "provenance": {
+      "enum": [
+        "SIMULATED",
+        "HUMAN_INPUT"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "parse_confidence": {
+      "default": 1.0,
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Parse Confidence",
+      "type": "number"
+    },
+    "human_confirmed": {
+      "default": false,
+      "title": "Human Confirmed",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "reply_id",
+    "request_id",
+    "raw_text",
+    "outcome",
+    "provenance"
+  ],
+  "title": "Reply",
+  "type": "object"
+}

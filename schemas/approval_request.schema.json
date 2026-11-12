@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "ApprovalStatus": {
+      "enum": [
+        "PENDING",
+        "APPROVED",
+        "REJECTED"
+      ],
+      "title": "ApprovalStatus",
+      "type": "string"
+    },
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "approval_id": {
+      "pattern": "^AP-\\d{3,}$",
+      "title": "Approval Id",
+      "type": "string"
+    },
+    "action": {
+      "title": "Action",
+      "type": "string"
+    },
+    "approver": {
+      "$ref": "#/$defs/Role"
+    },
+    "policy_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Policy Version",
+      "type": "integer"
+    },
+    "scenario_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Scenario Id"
+    },
+    "status": {
+      "$ref": "#/$defs/ApprovalStatus",
+      "default": "PENDING"
+    },
+    "decided_by": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Role"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Note"
+    }
+  },
+  "required": [
+    "approval_id",
+    "action",
+    "approver"
+  ],
+  "title": "ApprovalRequest",
+  "type": "object"
+}

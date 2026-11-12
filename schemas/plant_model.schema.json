@@ -1,0 +1,493 @@
+{
+  "$defs": {
+    "CapacityOption": {
+      "additionalProperties": false,
+      "properties": {
+        "option_id": {
+          "title": "Option Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "expansion",
+            "f2_conversion"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "target_line": {
+          "title": "Target Line",
+          "type": "string"
+        },
+        "capex_krw": {
+          "minimum": 0,
+          "title": "Capex Krw",
+          "type": "integer"
+        },
+        "lead_time_weeks": {
+          "exclusiveMinimum": 0,
+          "title": "Lead Time Weeks",
+          "type": "integer"
+        },
+        "added_capacity_qty": {
+          "exclusiveMinimum": 0,
+          "title": "Added Capacity Qty",
+          "type": "integer"
+        },
+        "requires": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Requires",
+          "type": "array"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "default": "SOURCE"
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "option_id",
+        "kind",
+        "target_line",
+        "capex_krw",
+        "lead_time_weeks",
+        "added_capacity_qty"
+      ],
+      "title": "CapacityOption",
+      "type": "object"
+    },
+    "CapacityUnit": {
+      "additionalProperties": false,
+      "description": "AS-001. 확정 전에는 단정하지 않는다.",
+      "properties": {
+        "period": {
+          "default": "UNKNOWN",
+          "enum": [
+            "per_month",
+            "per_year",
+            "UNKNOWN"
+          ],
+          "title": "Period",
+          "type": "string"
+        },
+        "status": {
+          "default": "UNCONFIRMED",
+          "enum": [
+            "UNCONFIRMED",
+            "CONFIRMED"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "assumption_id": {
+          "default": "AS-001",
+          "pattern": "^AS-\\d{3}$",
+          "title": "Assumption Id",
+          "type": "string"
+        }
+      },
+      "title": "CapacityUnit",
+      "type": "object"
+    },
+    "Line": {
+      "additionalProperties": false,
+      "properties": {
+        "line_id": {
+          "title": "Line Id",
+          "type": "string"
+        },
+        "plant_id": {
+          "title": "Plant Id",
+          "type": "string"
+        },
+        "product_family": {
+          "title": "Product Family",
+          "type": "string"
+        },
+        "capacity_qty": {
+          "exclusiveMinimum": 0,
+          "title": "Capacity Qty",
+          "type": "integer"
+        },
+        "utilization_pct": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Utilization Pct",
+          "type": "number"
+        },
+        "capacity_unit": {
+          "$ref": "#/$defs/CapacityUnit",
+          "default": {
+            "period": "UNKNOWN",
+            "status": "UNCONFIRMED",
+            "assumption_id": "AS-001"
+          }
+        },
+        "overtime_cap_pct": {
+          "default": 0,
+          "maximum": 50,
+          "minimum": 0,
+          "title": "Overtime Cap Pct",
+          "type": "number"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "default": "SOURCE"
+        },
+        "source_ref": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/SourceRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "line_id",
+        "plant_id",
+        "product_family",
+        "capacity_qty",
+        "utilization_pct"
+      ],
+      "title": "Line",
+      "type": "object"
+    },
+    "Material": {
+      "additionalProperties": false,
+      "properties": {
+        "material_id": {
+          "title": "Material Id",
+          "type": "string"
+        },
+        "supplier_id": {
+          "title": "Supplier Id",
+          "type": "string"
+        },
+        "exclusive": {
+          "title": "Exclusive",
+          "type": "boolean"
+        },
+        "lead_time_weeks": {
+          "minimum": 0,
+          "title": "Lead Time Weeks",
+          "type": "integer"
+        },
+        "moq_kg": {
+          "minimum": 0,
+          "title": "Moq Kg",
+          "type": "number"
+        },
+        "kg_per_unit": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Kg Per Unit"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      },
+      "required": [
+        "material_id",
+        "supplier_id",
+        "exclusive",
+        "lead_time_weeks",
+        "moq_kg",
+        "provenance"
+      ],
+      "title": "Material",
+      "type": "object"
+    },
+    "OutsourcingPartner": {
+      "additionalProperties": false,
+      "properties": {
+        "partner_id": {
+          "title": "Partner Id",
+          "type": "string"
+        },
+        "product_id": {
+          "title": "Product Id",
+          "type": "string"
+        },
+        "max_qty_per_month": {
+          "exclusiveMinimum": 0,
+          "title": "Max Qty Per Month",
+          "type": "integer"
+        },
+        "lead_time_weeks": {
+          "minimum": 0,
+          "title": "Lead Time Weeks",
+          "type": "integer"
+        },
+        "unit_cost_multiplier": {
+          "exclusiveMinimum": 0,
+          "maximum": 10,
+          "title": "Unit Cost Multiplier",
+          "type": "number"
+        },
+        "min_term_months": {
+          "minimum": 1,
+          "title": "Min Term Months",
+          "type": "integer"
+        },
+        "quality_risk_note": {
+          "title": "Quality Risk Note",
+          "type": "string"
+        },
+        "provenance": {
+          "enum": [
+            "SYNTHETIC",
+            "ASSUMPTION"
+          ],
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "partner_id",
+        "product_id",
+        "max_qty_per_month",
+        "lead_time_weeks",
+        "unit_cost_multiplier",
+        "min_term_months",
+        "quality_risk_note",
+        "provenance"
+      ],
+      "title": "OutsourcingPartner",
+      "type": "object"
+    },
+    "PremiumCosts": {
+      "additionalProperties": false,
+      "properties": {
+        "overtime_multiplier": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Overtime Multiplier",
+          "type": "number"
+        },
+        "overtime_max_hours_per_week": {
+          "maximum": 60,
+          "minimum": 0,
+          "title": "Overtime Max Hours Per Week",
+          "type": "integer"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance",
+          "default": "ASSUMPTION"
+        },
+        "partners": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/OutsourcingPartner"
+          },
+          "title": "Partners",
+          "type": "array"
+        }
+      },
+      "required": [
+        "overtime_multiplier",
+        "overtime_max_hours_per_week"
+      ],
+      "title": "PremiumCosts",
+      "type": "object"
+    },
+    "Provenance": {
+      "description": "정보 성격 구분 (A05 §6: 원본·부서 주장·가정·합성·모의·계산결과를 섞지 않는다).",
+      "enum": [
+        "SOURCE",
+        "DEPT_CLAIM",
+        "ASSUMPTION",
+        "SYNTHETIC",
+        "SIMULATED",
+        "HUMAN_INPUT",
+        "DERIVED"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "description": "원본 행/파일 또는 계약서 원문까지 추적하는 근거 참조.",
+      "properties": {
+        "file": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "clause": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clause"
+        },
+        "char_span": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Char Span"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "title": "SourceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "as_of": {
+      "format": "date",
+      "title": "As Of",
+      "type": "string"
+    },
+    "horizon_weeks": {
+      "exclusiveMinimum": 0,
+      "maximum": 104,
+      "title": "Horizon Weeks",
+      "type": "integer"
+    },
+    "lines": {
+      "items": {
+        "$ref": "#/$defs/Line"
+      },
+      "minItems": 1,
+      "title": "Lines",
+      "type": "array"
+    },
+    "materials": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Material"
+      },
+      "title": "Materials",
+      "type": "array"
+    },
+    "options": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/CapacityOption"
+      },
+      "title": "Options",
+      "type": "array"
+    },
+    "premium": {
+      "$ref": "#/$defs/PremiumCosts"
+    },
+    "changeover_hours": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "default": {},
+      "title": "Changeover Hours",
+      "type": "object"
+    }
+  },
+  "required": [
+    "as_of",
+    "horizon_weeks",
+    "lines",
+    "premium"
+  ],
+  "title": "PlantModel",
+  "type": "object"
+}

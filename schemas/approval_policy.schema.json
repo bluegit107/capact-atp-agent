@@ -1,0 +1,156 @@
+{
+  "$defs": {
+    "ApprovalRule": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_\\-]+$",
+          "title": "Action",
+          "type": "string"
+        },
+        "approver": {
+          "$ref": "#/$defs/Role"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "basis": {
+          "minLength": 1,
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "action",
+        "approver",
+        "provenance",
+        "basis"
+      ],
+      "title": "ApprovalRule",
+      "type": "object"
+    },
+    "PolicyChange": {
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "minimum": 2,
+          "title": "Version",
+          "type": "integer"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "before": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Role"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "after": {
+          "$ref": "#/$defs/Role"
+        },
+        "actor": {
+          "minLength": 1,
+          "title": "Actor",
+          "type": "string"
+        },
+        "actor_role": {
+          "$ref": "#/$defs/Role"
+        },
+        "actor_kind": {
+          "const": "human",
+          "title": "Actor Kind",
+          "type": "string"
+        },
+        "reason": {
+          "minLength": 5,
+          "title": "Reason",
+          "type": "string"
+        },
+        "at": {
+          "format": "date-time",
+          "title": "At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "version",
+        "action",
+        "before",
+        "after",
+        "actor",
+        "actor_role",
+        "actor_kind",
+        "reason",
+        "at"
+      ],
+      "title": "PolicyChange",
+      "type": "object"
+    },
+    "Provenance": {
+      "description": "정보 성격 구분 (A05 §6: 원본·부서 주장·가정·합성·모의·계산결과를 섞지 않는다).",
+      "enum": [
+        "SOURCE",
+        "DEPT_CLAIM",
+        "ASSUMPTION",
+        "SYNTHETIC",
+        "SIMULATED",
+        "HUMAN_INPUT",
+        "DERIVED"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "rules": {
+      "items": {
+        "$ref": "#/$defs/ApprovalRule"
+      },
+      "title": "Rules",
+      "type": "array"
+    },
+    "history": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/PolicyChange"
+      },
+      "title": "History",
+      "type": "array"
+    }
+  },
+  "required": [
+    "version",
+    "rules"
+  ],
+  "title": "ApprovalPolicy",
+  "type": "object"
+}

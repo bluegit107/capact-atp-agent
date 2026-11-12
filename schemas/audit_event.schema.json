@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "description": "불변 추가형 감사 기록. 역할 전환(대리 수행)은 acting_as_role 로 남긴다.",
+  "properties": {
+    "event_id": {
+      "title": "Event Id",
+      "type": "string"
+    },
+    "at": {
+      "format": "date-time",
+      "title": "At",
+      "type": "string"
+    },
+    "actor": {
+      "title": "Actor",
+      "type": "string"
+    },
+    "actor_role": {
+      "title": "Actor Role",
+      "type": "string"
+    },
+    "acting_as_role": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Acting As Role"
+    },
+    "action": {
+      "title": "Action",
+      "type": "string"
+    },
+    "object_ref": {
+      "title": "Object Ref",
+      "type": "string"
+    },
+    "input_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Input Hash"
+    }
+  },
+  "required": [
+    "event_id",
+    "at",
+    "actor",
+    "actor_role",
+    "action",
+    "object_ref"
+  ],
+  "title": "AuditEvent",
+  "type": "object"
+}

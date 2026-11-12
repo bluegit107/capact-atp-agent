@@ -1,0 +1,99 @@
+{
+  "$defs": {
+    "InfoRequestStatus": {
+      "enum": [
+        "DRAFT",
+        "SENT",
+        "REPLIED",
+        "EXPIRED",
+        "CLOSED"
+      ],
+      "title": "InfoRequestStatus",
+      "type": "string"
+    },
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "pattern": "^IR-\\d{3,}$",
+      "title": "Request Id",
+      "type": "string"
+    },
+    "to_role": {
+      "$ref": "#/$defs/Role"
+    },
+    "counterparty": {
+      "title": "Counterparty",
+      "type": "string"
+    },
+    "question": {
+      "title": "Question",
+      "type": "string"
+    },
+    "answer_by": {
+      "format": "date",
+      "title": "Answer By",
+      "type": "string"
+    },
+    "linked_assumption_id": {
+      "anyOf": [
+        {
+          "pattern": "^AS-\\d{3}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Linked Assumption Id"
+    },
+    "linked_lever_id": {
+      "anyOf": [
+        {
+          "pattern": "^LV-\\d{3,}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Linked Lever Id"
+    },
+    "status": {
+      "$ref": "#/$defs/InfoRequestStatus",
+      "default": "DRAFT"
+    },
+    "draft_by_llm": {
+      "default": false,
+      "title": "Draft By Llm",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "request_id",
+    "to_role",
+    "counterparty",
+    "question",
+    "answer_by"
+  ],
+  "title": "InfoRequest",
+  "type": "object"
+}

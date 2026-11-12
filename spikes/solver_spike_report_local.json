@@ -1,0 +1,180 @@
+{
+  "limits": {
+    "os_cpu_count": 12,
+    "cgroup_cpu_max": null,
+    "cgroup_memory_max": null
+  },
+  "cpu_benchmark_s": 0.159,
+  "runs": [
+    {
+      "backend": "HIGHS",
+      "status": "OPTIMAL",
+      "wall_s": 0.45,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 9110289303,
+      "accept": {
+        "PL-01": 0.812,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "A_protect_customers"
+    },
+    {
+      "backend": "HIGHS",
+      "status": "OPTIMAL",
+      "wall_s": 0.443,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 17749990436,
+      "accept": {
+        "PL-01": 0.889,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "B_max_profit"
+    },
+    {
+      "backend": "SCIP",
+      "status": "OPTIMAL",
+      "wall_s": 0.248,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 9110289303,
+      "accept": {
+        "PL-01": 0.812,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "A_protect_customers"
+    },
+    {
+      "backend": "SCIP",
+      "status": "OPTIMAL",
+      "wall_s": 0.251,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 17749990436,
+      "accept": {
+        "PL-01": 0.889,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "B_max_profit"
+    },
+    {
+      "backend": "HIGHS",
+      "status": "OPTIMAL",
+      "wall_s": 0.461,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 4953324890,
+      "accept": {
+        "PL-01": 1.0,
+        "PL-02": 1.0
+      },
+      "opt02": 1,
+      "opt01": 0,
+      "capacity_mode": "H3_calibrated_from_batchlog",
+      "preset": "A_protect_customers"
+    },
+    {
+      "backend": "HIGHS",
+      "status": "OPTIMAL",
+      "wall_s": 0.466,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 21134693668,
+      "accept": {
+        "PL-01": 1.0,
+        "PL-02": 1.0
+      },
+      "opt02": 1,
+      "opt01": 0,
+      "capacity_mode": "H3_calibrated_from_batchlog",
+      "preset": "B_max_profit"
+    },
+    {
+      "backend": "SCIP",
+      "status": "OPTIMAL",
+      "wall_s": 0.225,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 4953324890,
+      "accept": {
+        "PL-01": 1.0,
+        "PL-02": 1.0
+      },
+      "opt02": 1,
+      "opt01": 0,
+      "capacity_mode": "H3_calibrated_from_batchlog",
+      "preset": "A_protect_customers"
+    },
+    {
+      "backend": "SCIP",
+      "status": "OPTIMAL",
+      "wall_s": 0.256,
+      "vars": 8636,
+      "constraints": 7724,
+      "integer_batches": false,
+      "objective_krw": 21134693668,
+      "accept": {
+        "PL-01": 1.0,
+        "PL-02": 1.0
+      },
+      "opt02": 1,
+      "opt01": 0,
+      "capacity_mode": "H3_calibrated_from_batchlog",
+      "preset": "B_max_profit"
+    },
+    {
+      "backend": "HIGHS",
+      "status": "OPTIMAL",
+      "wall_s": 2.192,
+      "vars": 8948,
+      "constraints": 8036,
+      "integer_batches": true,
+      "objective_krw": 15425247704,
+      "accept": {
+        "PL-01": 0.651,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "B_max_profit"
+    },
+    {
+      "backend": "SCIP",
+      "status": "OPTIMAL",
+      "wall_s": 5.431,
+      "vars": 8948,
+      "constraints": 8036,
+      "integer_batches": true,
+      "objective_krw": 15426322562,
+      "accept": {
+        "PL-01": 0.651,
+        "PL-02": 1.0
+      },
+      "opt02": 0,
+      "opt01": 0,
+      "capacity_mode": "H1_nameplate_per_month",
+      "preset": "B_max_profit"
+    }
+  ]
+}

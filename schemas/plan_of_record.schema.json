@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    },
+    "scenario_id": {
+      "title": "Scenario Id",
+      "type": "string"
+    },
+    "input_hash": {
+      "title": "Input Hash",
+      "type": "string"
+    },
+    "approved_by": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Approved By",
+      "type": "array"
+    },
+    "lever_ids": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Lever Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "version",
+    "scenario_id",
+    "input_hash",
+    "approved_by"
+  ],
+  "title": "PlanOfRecord",
+  "type": "object"
+}

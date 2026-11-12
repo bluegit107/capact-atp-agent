@@ -1,0 +1,222 @@
+{
+  "$defs": {
+    "ClauseKind": {
+      "description": "닫힌 enum. 목록에 없는 조항은 솔버에 넣지 않고 UNMAPPED 로 사람에게 올린다.",
+      "enum": [
+        "late_penalty",
+        "termination_trigger",
+        "partial_shipment",
+        "price_discount_waiver",
+        "fixed_delivery_slot",
+        "cost_linked_pricing"
+      ],
+      "title": "ClauseKind",
+      "type": "string"
+    },
+    "Extraction": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "human_confirmed": {
+          "default": false,
+          "title": "Human Confirmed",
+          "type": "boolean"
+        },
+        "confirmed_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confirmed By"
+        }
+      },
+      "required": [
+        "model",
+        "confidence"
+      ],
+      "title": "Extraction",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "description": "원본 행/파일 또는 계약서 원문까지 추적하는 근거 참조.",
+      "properties": {
+        "file": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "File"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row"
+        },
+        "doc_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Doc Id"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        },
+        "clause": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Clause"
+        },
+        "char_span": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Char Span"
+        },
+        "quote": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Quote"
+        }
+      },
+      "title": "SourceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "clause_id": {
+      "pattern": "^CL-[A-Z0-9]+-\\d{2}$",
+      "title": "Clause Id",
+      "type": "string"
+    },
+    "customer_id": {
+      "title": "Customer Id",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/ClauseKind"
+    },
+    "params": {
+      "additionalProperties": true,
+      "title": "Params",
+      "type": "object"
+    },
+    "hard": {
+      "title": "Hard",
+      "type": "boolean"
+    },
+    "priority": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Priority",
+      "type": "integer"
+    },
+    "supersedes": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Supersedes",
+      "type": "array"
+    },
+    "evidence": {
+      "$ref": "#/$defs/SourceRef"
+    },
+    "extraction": {
+      "$ref": "#/$defs/Extraction"
+    },
+    "provenance": {
+      "default": "SYNTHETIC",
+      "enum": [
+        "SYNTHETIC",
+        "SOURCE"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    }
+  },
+  "required": [
+    "clause_id",
+    "customer_id",
+    "kind",
+    "params",
+    "hard",
+    "evidence",
+    "extraction"
+  ],
+  "title": "Clause",
+  "type": "object"
+}

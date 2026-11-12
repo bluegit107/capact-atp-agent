@@ -1,0 +1,121 @@
+{
+  "$defs": {
+    "AssumptionStatus": {
+      "enum": [
+        "UNCONFIRMED",
+        "PROPOSED",
+        "CONFIRMED",
+        "REJECTED"
+      ],
+      "title": "AssumptionStatus",
+      "type": "string"
+    },
+    "EvidenceTest": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "result": {
+          "title": "Result",
+          "type": "string"
+        },
+        "evidence_ref": {
+          "title": "Evidence Ref",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "result",
+        "evidence_ref"
+      ],
+      "title": "EvidenceTest",
+      "type": "object"
+    },
+    "Role": {
+      "description": "RBAC 역할 (approval_authority_policy.md 의 승인 주체와 정렬).",
+      "enum": [
+        "영업",
+        "생산",
+        "구매",
+        "품질",
+        "재무",
+        "영업임원",
+        "CEO/이사회",
+        "심사자",
+        "정책관리자"
+      ],
+      "title": "Role",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "assumption_id": {
+      "pattern": "^AS-\\d{3}$",
+      "title": "Assumption Id",
+      "type": "string"
+    },
+    "statement": {
+      "title": "Statement",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/AssumptionStatus",
+      "default": "UNCONFIRMED"
+    },
+    "owner_role": {
+      "$ref": "#/$defs/Role"
+    },
+    "due": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Due"
+    },
+    "tests": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/EvidenceTest"
+      },
+      "title": "Tests",
+      "type": "array"
+    },
+    "impact_scope": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Impact Scope",
+      "type": "array"
+    },
+    "decision_invariant": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Decision Invariant"
+    }
+  },
+  "required": [
+    "assumption_id",
+    "statement",
+    "owner_role"
+  ],
+  "title": "Assumption",
+  "type": "object"
+}
